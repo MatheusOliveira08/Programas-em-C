@@ -9,7 +9,7 @@ int main(void){
   int maior = filhoA;
   
   if(monica >= 40 && monica <=110 && filhoA >= 1 && filhoA < monica && filhoB >= 1 && filhoB < monica && filhoA != filhoB){
-         filhoC = monica - (filhoA + filhoB);
+      filhoC = monica - (filhoA + filhoB);
      
      if(filhoB > filhoA){
          maior = filhoB;
