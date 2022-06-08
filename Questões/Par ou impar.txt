@@ -1,0 +1,8 @@
+Escreva um programa em C que receba um número como entrada e imprima se este número é par ou ímpar
+
+Casos de Testes:
+1
+impar
+
+2
+par

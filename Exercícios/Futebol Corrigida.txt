@@ -1,0 +1,59 @@
+#include <stdio.h>
+ 
+int main() {
+    
+    char jogos[1000];
+    int i, j = 0, temp = 0, tamanhoD = 0, tamanho = 0, maior;
+
+    scanf("%s", jogos);
+
+    for(i = 0; jogos[i] != '\0'; i++){
+        if(jogos[i] == 'D')
+            tamanhoD++;
+        tamanho++;
+        
+    }
+
+    int guardar[tamanhoD];
+
+    if(tamanhoD == 1 && (jogos[0] != 'D' && jogos[tamanho - 1] != 'D')){
+        for(i = 0; jogos[i] != '\0'; i++){
+            if(jogos[i] != 'D'){
+                temp++;
+            }
+            else{
+                guardar[0] = temp;
+                temp = 0;
+            }
+        }
+        if(guardar[0] > temp)
+            maior = guardar[0];
+        else
+            maior = temp;
+
+    }
+                     
+    else{
+
+        for(i = 0; jogos[i] != '\0'; i++){
+            if(jogos[i] != 'D')
+                temp++;
+            else{
+                guardar[j] = temp;
+                temp = 0;
+                j++;
+            }
+        }
+
+        maior = temp;
+
+        for(i = 0; i < tamanhoD; i++){
+            if(guardar[i] > maior)
+                maior = guardar[i];
+        }
+    }
+
+    printf("%d\n", maior);
+
+    return 0;
+}

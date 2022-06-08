@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+    int main(void){
+
+        char palavra[1000]; 
+        int i;
+
+        scanf("%999[^\n]", palavra); //precisa por isso para pegar caracteres com espaço
+
+         if(palavra[0] >= 'a' && palavra[0] <= 'z') //colocando a primeira letra como maiúscula
+                palavra[0] = palavra[0] - 'a' + 'A';
+
+
+        for(i = 1; palavra[i] != '\0'; i++){
+
+            if(palavra[i] == ' '){ //se a palavra for um espaço, siginifica que a próxima será uma palavra que deverá ter a primeira letra maiúscula
+                if(palavra[i+1] >= 'a' && palavra[i+1] <= 'z'){
+                    palavra[i+1] = palavra[i+1] - 'a' + 'A'; //tranforma para maiúscula
+                    i++; //incremente, pq senão o próximo i vai entrar no else if e letra que foi transformada em maiúcula aqui, vai virar minúscula no else if
+                }
+                else //se ja for maiúscula, só vai para a próxima
+                    i++;        
+            }
+            else if(palavra[i] >= 'A' && palavra[i] <= 'Z')
+                palavra[i] = palavra[i] - 'A' + 'a';
+        }
+        
+        printf("%s\n", palavra);
+     
+        return 0;
+    }

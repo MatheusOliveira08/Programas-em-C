@@ -1,0 +1,10 @@
+Escreva um algoritmo que leia uma string de tamanho no máximo 200 caracteres e imprima o valor em minúsculo.
+
+Exemplos:
+Filipe
+
+filipe
+
+PEDRO
+
+pedro

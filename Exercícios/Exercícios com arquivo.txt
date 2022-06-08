@@ -1,0 +1,508 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 200
+
+typedef struct {
+    FILE* arquivo;
+    char nome_arquivo[MAX];
+    int npontos;
+} TArquivo;
+
+typedef struct {
+    float x;
+    float y;
+} TRegistro;
+
+void cria_arquivo(TArquivo *);
+
+void ler_pontos(TRegistro [], TArquivo *);
+
+void escrever_informacoes_arquivo(TArquivo *, TRegistro []);
+
+TRegistro* ponto_medio(TRegistro v[],int n);
+
+int main(void){
+
+    TArquivo arq;
+
+    cria_arquivo(&arq);
+
+    TRegistro ponto[arq.npontos];
+    //TRegistro* ponto =  (TRegistro*) malloc(arq.npontos*sizeof(TRegistro));
+
+    ler_pontos(ponto, &arq);
+
+    escrever_informacoes_arquivo(&arq, ponto);
+
+
+    //free(ponto);
+    
+}
+
+TRegistro* ponto_medio(TRegistro ponto[],int n){
+
+   int i;
+   float somadorX = 0, somadorY=0;
+   float mediaX, mediaY;
+
+   for(i = 0; i < n; i++){
+       somadorX += ponto[i].x;
+       somadorY += ponto[i].y;
+   }
+   
+    mediaX = somadorX/n;
+    mediaY = somadorY/n;
+    
+    
+    TRegistro* c =  (TRegistro*) malloc(sizeof(TRegistro));
+
+    c->x = mediaX;
+    c->y = mediaY;
+       
+    return c;     
+
+}
+
+TRegistro ponto_medio_copia(TRegistro ponto[],int n){
+
+   int i;
+   float somadorX = 0, somadorY=0;
+   float mediaX, mediaY;
+
+   for(i = 0; i < n; i++){
+       somadorX += ponto[i].x;
+       somadorY += ponto[i].y;
+   }
+   
+    mediaX = somadorX/n;
+    mediaY = somadorY/n;
+    TRegistro c = {mediaX,mediaY};       
+    
+    return c;     
+
+}
+
+
+void cria_arquivo(TArquivo *arq){
+
+    printf("Digite o nome do arquivo: \n");
+    scanf("%s", arq->nome_arquivo);
+
+    printf("Digite quantos pontos deseja inserir: \n");
+    scanf("%d", &arq->npontos);
+
+    arq->arquivo = fopen(arq->nome_arquivo, "wb");
+
+}
+
+void ler_pontos(TRegistro ponto[], TArquivo *arq){
+    int i;
+
+    for(i = 0; i < arq->npontos; i++){
+        scanf("%f", &ponto[i].x); 
+        scanf("%f", &ponto[i].y); 
+    }
+}
+
+void escrever_informacoes_arquivo(TArquivo *arq, TRegistro ponto[]){
+
+    fwrite(ponto,sizeof(TRegistro),arq->npontos,arq->arquivo);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <stdio.h>
+#define MAX_NOME 1000
+#define MAX 1000
+
+typedef struct{
+    char nome[MAX_NOME];
+    int  idade;
+    char genero;
+} TPessoa;
+
+int main(void){
+    
+    FILE* arquivo;
+    char frase[MAX];
+
+    arquivo = fopen ("arquivo.txt", "r");
+
+    if (arquivo == NULL) {
+        perror("Error, impossível abrir arquivo\n");
+        return 1;
+    }
+
+    int n,i;
+    fscanf(arquivo, "%d", &n);
+
+    TPessoa pessoa[n];
+
+    for(i = 0; i < n; i++){
+        fscanf(arquivo, "%s %d %c", pessoa[i].nome, &pessoa[i].idade, &pessoa[i].genero);
+        //fgets(frase,MAX,arquivo);
+        //puts(frase);
+    }
+
+    for(i = 0; i < n; i++){
+        printf("%s\n", pessoa[i].nome);
+        printf("%d\n", pessoa[i].idade);
+        printf("%c\n", pessoa[i].genero);
+    }
+
+    fclose(arquivo);
+
+
+    return 0;
+}*/
+
+    
+
+
+/* exercico que pega frases e põem em um arquivo
+
+#include <stdio.h>
+
+int main(void){
+
+    int i, quantidade;
+    char nome[200], frase[1000];
+    FILE *arquivo;
+
+    printf("Digite o nome do arquivo: ");
+    scanf("%s", nome);
+
+    printf("Digite quantas frases: ");
+    scanf("%d", &quantidade);
+
+    arquivo = fopen (nome, "w");
+
+    if (arquivo == NULL) {
+        perror("Error, impossível abrir arquivo\n");
+        return 1;
+    }
+
+    for(i = 0; i < quantidade; i++){
+        printf("Digite uma frase: "); //poderia ser como fgets(frase, 1000, stdin)
+        scanf(" %999[^\n]", frase);
+        fprintf(arquivo, "%s", frase); //poderia ser com puts(frase)
+        printf("\n");
+    }
+
+    fclose(arquivo);
+
+    return 0;
+}*/
+
+
+
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+#define FORCA 10
+#define SAUDE 100
+#define STAMINA 30
+
+typedef int   TInt;
+typedef float TReal; 
+
+typedef struct inimigo{
+  TReal saude;
+  TReal forca;
+  TReal stamina;
+  TInt  status; 
+} TInimigo;
+
+
+TInimigo* cria(int);
+
+int main(void){
+
+    TInimigo* inimigos;
+    int n;
+
+    printf("Entre com o total de inimigos: \n");
+    scanf("%d",&n);
+    
+    inimigos = cria(n);
+    
+    // jogo
+    
+
+    // apagar
+    free(inimigos);
+
+    // jogo ...
+    
+
+    return 0;
+}
+
+TInimigo* cria(int n){
+     
+     TInimigo* aux = (TInimigo*) malloc(n*sizeof(TInimigo));
+     for (int i=0;i<n;i++) {
+        *aux[i] = (TInimigo*) malloc(sizeof(TInimigo))
+     }
+
+     return aux;
+}*/
+
+
+
+
+/*#include <stdio.h>
+
+    typedef float Real;
+
+    typedef struct ponto{
+        Real x, y;
+    } Ponto;
+    
+
+    void le_ponto(Ponto v[], int n);
+
+    int main(void){
+
+        int tamanho;
+
+        scanf("%d", &tamanho);
+
+        Ponto a[tamanho];
+
+        le_ponto(a, tamanho); //chamando a função
+
+        for(int i = 0; i < tamanho; i++)
+            printf("V[%d].x = %f\tV[%d].y = %f\n", i , a[i].x, i, a[i].y);
+
+
+        return 0;
+    }
+
+    void le_ponto(Ponto v[], int n){
+
+        int i;
+
+        for(i = 0; i < n; i++)
+            scanf("%f %f", &v[i].x, &v[i].y); // como é o vetor e não um ponteiro do vetor, usa o '.' e não a '->'
+        
+    }*/
+
+/* exercício do ponto que ele passou 
+
+    #include <stdio.h>
+#include <math.h>
+
+#define MAX 100
+
+typedef float TReal; 
+typedef int TInt;
+
+typedef struct ponto {
+  TReal x,y; // poderia ser float x,y
+} TPonto;
+
+typedef struct pontos {
+  TPonto* ponto; // poderia ser float x,y
+  TInt    n; 
+} TPontos;
+
+
+
+TReal distancia(TPonto*,TPonto*);
+void le(TPonto*, TInt);
+void mostra(TPonto*, TInt);
+
+
+int main (void){
+  
+
+  TInt n;
+  printf("Entre com o total de pontos: \n");
+  scanf("%d",&n);
+  
+  TPontos pontos;
+
+  TPonto ponto[n];
+
+  le(ponto,n);
+  mostra(ponto,n);
+
+  return 0;
+}
+
+
+TReal distancia(TPonto* a,TPonto* b){
+      return sqrt( pow(a->x - b->x,2) + pow(a->y - b->y,2) );
+}
+
+void le(TPonto ponto[], TInt n){
+      printf("Entre com as coordenadas dos pontos: \n");
+      for (int i=0;i<n;i++){
+          scanf("%f %f",&ponto[i].x,&ponto[i].y);
+      }
+}
+
+void mostra(TPonto ponto[], TInt n){
+      for (int i=0;i<n;i++){
+          printf("\n %f %f",ponto[i].x,ponto[i].y);
+      }
+}
+*/
+
+
+
+/* aula de struct
+#include <stdio.h>
+
+struct ponto {
+  float x,y;
+};
+
+void mostra_por_referencia(struct ponto* pp){
+  printf("ref funcao: x = %.2f y = %.2f \n",pp->x,pp->y);
+}
+
+void mostra_por_valor(struct ponto k){
+  printf("val funcao: x = %.2f y = %.2f \n",k.x,k.y);
+}
+
+
+void le_dados(struct ponto* p){
+  scanf("%f %f",&p->x,&p->y);
+}
+
+void le_dados_errado(struct ponto p){
+  scanf("%f %f",&p.x,&p.y);
+}
+
+struct ponto le_dados_copia(struct ponto k){
+  scanf("%f %f",&k.x,&k.y);
+  return k;
+}
+
+
+int main (void){
+
+  struct ponto p; // aloca a struct na pilha com dois campos
+  
+  struct ponto* apelido;
+
+  apelido->x = 20;
+  
+  apelido = &p; // aponta para o endereço de p
+
+
+  //le_dados_errado(p);
+
+  //le_dados(apelido);
+  
+  p = le_dados_copia(p); // k
+
+  //apelido->x = 30;
+
+  //printf("Main [antes]: x = %.2f y = %.2f \n ",p.x,p.y);
+  //printf("x = %.2f y = %.2f \n ",apelido->x,apelido->y);
+
+  mostra_por_referencia(&p);
+  //printf("Main [depois]: x = %.2f y = %.2f \n ",p.x,p.y);
+  
+  mostra_por_referencia(apelido);
+  
+  mostra_por_valor(p);
+  //printf("Main [depois]: x = %.2f y = %.2f \n ",p.x,p.y);
+  
+  
+  return 0;
+}*/
+
+/*#include <stdio.h>
+
+    int main(void){
+        
+        int n, i;
+        
+        scanf("%d", &n);
+        
+        while(n != 0){
+            if(n%1000 == 0){
+                printf("M");
+                n = n%1000;
+            }
+            if(n%500 == 0);{
+                printf("D");
+                n = n%500;
+            }
+            if(n%100 == 0){
+                printf("C");
+                n = n%100;
+            }
+            if(n%50 == 0){
+                printf("L");
+                n = n%50;
+            }
+            if(n%10 == 0){
+                printf("X");
+                n = n%10;
+            }
+             if(n%5 == 0){
+                printf("V");
+                n = n%5;
+             }
+             if(n%1 == 0){
+                printf("X");
+             }
+        }
+        
+        
+        
+        return 0;
+    }*/
+
+/* menor valor de um vetor
+
+#include <stdio.h>
+
+  int main(void){
+    
+    int n, i, temp, metade;
+
+    scanf("%d", &n);
+    int v[n];
+
+    for(i = 0; i < n; i++){
+      scanf("%d", &v[i]);
+    }
+
+    int menor = v[0];
+
+    for(i = 0; i < n; i++){
+      
+      if(v[i] < menor){
+        temp = menor; 
+        menor = v[i];
+        v[i] = temp;
+      }
+    }
+
+    printf("Menor = %d\n", menor);
+    
+
+  return 0;
+}
+
+*/
+

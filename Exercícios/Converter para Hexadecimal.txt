@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+    int main(void){
+
+    int guardar[50] = {0},transfere [50] = {0}, i, j, n, cont = 0;
+
+    scanf("%d", &n);
+
+    int igual = n;
+
+    while(igual >= 16){ //vendo quantas divisões inteiras ocorrem para colocar como tamanho no for
+        igual = igual/16;
+        cont++;
+    }
+
+    for(i = 0; i <= cont; i++){ //guardando o resto das divisões no vetor guardar
+        guardar[i] += (n % 16);
+        n = n/16; //atualizando o valor n
+    }
+
+    for(i = cont, j = 0; i >= 0,j <= cont; i--,j++) //tranferindo os valores para o vetor tranferir, só que invertidos
+        transfere[j] = guardar[i];
+    
+    for(i = 0; i <= cont; i++){ //colocando cada caso específico do hexadecimal(de 10 a 15) e imprimindo os valores
+        if(transfere[i] >= 10 && transfere[i] <= 15){
+
+            if(transfere[i] == 10)
+                printf("A");
+            else if(transfere[i] == 11)
+                printf("B");
+            else if(transfere[i] == 12)
+                printf("C");
+            else if(transfere[i] == 13)
+                printf("D");
+            else if(transfere[i] == 14)
+                printf("E");
+            else if(transfere[i] == 15)
+                printf("F");
+        }
+        else
+            printf("%d",transfere[i]); //se não for nenhum dos casos especiais, imprimi o número normal
+    }
+    
+    printf("\n");
+
+    return 0;
+}

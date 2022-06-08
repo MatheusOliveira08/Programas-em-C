@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int contador = 0;
+
+int fibbo_recursivo(int);
+
+int main(void){
+    
+    int n, x, aux;
+    
+    scanf("%d", &n);
+    
+    for(int i = 0; i < n; i++){
+        scanf("%d", &x);
+        aux = fibbo_recursivo(x);
+        printf("fib(%d) = %d calls = %d\n", x, contador-1, aux);
+        contador = 0;
+    }
+        
+    
+    
+    return 0;
+}
+
+int fibbo_recursivo(int x){
+    contador++;
+    if(x < 2)
+        return x;
+        
+    return fibbo_recursivo(x - 1) + fibbo_recursivo(x - 2);
+}

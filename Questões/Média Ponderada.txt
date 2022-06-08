@@ -1,0 +1,52 @@
+"A média aritmética ponderada é bastante similar à média aritmética comum. A diferença, entretanto, é que na média aritmética todos os valores contribuem com peso igual, enquanto que no cálculo da média aritmética ponderada se leva em consideração a contribuição (peso) de cada termo, uma vez que existem termos que contribuem mais que outros."
+
+
+
+A média aritmética ponderada é calculada da seguinte forma:
+
+Mp=p1∗x1+p2∗x2+...+pn∗xnp1+p2+...+pn
+
+
+Onde,
+Mp: Média aritmética ponderada
+p1, p2,..., pn: pesos
+x1, x2,...,xn: valores dos dados
+
+Escreva um programa para calcular a média aritmética ponderada de N valores. 
+
+Obs: Considere como ponto flutuante de precisão dupla os pesos e valores.
+
+
+
+Entrada:
+
+N
+
+p1 x1
+
+p2 x2
+
+...
+
+pn xn
+
+
+
+Saída
+
+Mp
+
+
+
+
+Exemplo de Entrada e Saída:
+
+3
+
+0.2 6.3
+
+0.4 8.1
+
+0.5 9.2
+
+8.227272

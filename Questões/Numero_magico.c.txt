@@ -1,0 +1,27 @@
+Você descobriu um número mágico com seus conhecimentos de cálculo adquiridos na universidade. O número mágico possui diversas propriedades interessantes e segue a fórmula abaixo: 
+
+magico(x,n)=∑ni=0(−1)i∗x(2i+1)(i+1)!
+
+Escreva uma função que implemente a fórmula do número mágico, descrita acima. Está função segue o protótipo: float magico(float x, int n). As funções exponencial e fatorial também devem ser implementadas, com os seguintes protótipos, float expo(float b, int e) e int fat(int n), respectivamente.
+
+Observação:
+
+Não pode usar a biblioteca math.h;
+Serão avaliadas individualmente as funções que você irá implementar.
+Restrições: x∈R e n∈N+
+Entrada:
+
+Os valores de x e n.
+
+Saída:
+
+O valor do resultado.
+
+Exemplo de entrada:
+
+2.5 3
+
+Exemplo de saída:
+
+-14.467773
+

@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        unsigned int n, i, j, cont = 0; 
+        long int maior;
+        
+        scanf("%d", &n);
+        
+        if(n > 0){
+            for(i = 1; i <= n; i++){
+                for(j = 1; j <= i; j++){
+                    if(i%j == 0)
+                        cont++;
+            
+                }
+
+                if(cont == 2){
+
+                    if(n%i == 0)
+                        maior = i;
+
+                }
+
+                cont = 0;           
+            }
+        }
+
+        printf("%ld\n", maior);
+               
+        return 0;
+    }
+
+*/ ou essa daqui do sullyvan, o meu não funciona com número muito grande, a do sullyvan só funciona com esse número, não é um código genérico
+
+#include <stdio.h>
+#define VALOR 600851475143
+
+int main() {
+
+    int fator;
+    unsigned long long int n = VALOR;
+
+    fator = 2; //iniciando fator com o menor primo
+    while (n > 1) { //vai dividir até n ser maior que um
+        while (n % fator == 0) { //se o resto da divisão de n com o fator for igual a 0, n recebe n/fator
+            n = n/fator;
+        }
+        fator++; //incrementa o fator
+    }
+    printf("%d", fator - 1); //-1 pq ele incrementa antes de verificar se n>1
+    return 0;
+}
+*/

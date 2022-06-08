@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void){
+
+    int n, i, direcao = 0;
+    scanf("%d", &n);
+
+    if(n >= 1 && n <= 1000){
+
+        char vetor[n];
+
+        scanf("%s", vetor);
+
+        for (i = 0; i < n; i++) {
+
+            if (vetor[i] == 'D' || vetor[i] == 'd') {
+                direcao++;
+            }
+            else if (vetor[i] == 'E' || vetor[i] == 'e') {
+                direcao--;
+            }
+        }
+
+        direcao = direcao%4;
+
+        if (direcao == 0) {
+            printf("N\n");
+        }
+        else if (direcao == 1 || direcao == -3) {
+            printf("L\n");
+        }
+        else if (direcao == 2 || direcao == -2) {
+            printf("S\n");
+        }
+        else if (direcao == 3 || direcao == -1) {
+            printf("O\n");
+        }
+    } 
+
+    return 0;
+}

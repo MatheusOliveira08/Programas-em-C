@@ -1,0 +1,17 @@
+Cada novo termo na sequencia de Fibonacci é gerado ao somar os dois termos anteriores. Ao iniciar com 1 e 2, os 10 primeiros termos serão:
+
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+Ao considerar os termos na sequencia de Fibonacci em que os valores não excedem X, encontre a soma dos termos pares.
+
+
+Entrada
+  A entrada consiste de um valor inteiro positivo, X
+
+
+
+Exemplo:
+Entrada: 2000
+
+Saida: 798
+

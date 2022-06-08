@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void soma_recursiva();
+
+int main(void){
+    
+    int t, i;
+    
+    scanf("%d", &t);
+    
+    for(i = 0; i < t; i++)
+        soma_recursiva();
+        
+
+    return 0;
+}
+
+void soma_recursiva(){
+    int n, i, somatorio = 0;
+    
+    scanf("%d", &n);
+    
+    int v[n];
+    
+    for(i = 0; i < n; i++){
+        scanf("%d", &v[i]);
+        somatorio += v[i];
+    }
+    printf("%d\n", somatorio);
+}

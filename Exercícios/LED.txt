@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int i, j = 0, n,  led = 0;
+
+        scanf("%d", &n);
+        
+        if(n >= 1 && n <= 1000){
+
+            char numero[1000]; //char para verificar cada posição do número
+    
+            for(i = 0; i < n; i++){
+                scanf("%s", numero); 
+    
+                while(numero[j] != '\0'){ //analisando cada digito e comparando com a quantidade de leds;
+                
+                    if(numero[j] >= '0' && numero[j] <= '9'){
+    
+                        if(numero[j] == '0')
+                            led += 6;
+                        if(numero[j] == '1')
+                            led += 2;
+                        if(numero[j] == '2')
+                            led += 5;
+                        if(numero[j] == '3')
+                            led += 5;
+                        if(numero[j] == '4')
+                            led += 4;
+                        if(numero[j] == '5')
+                            led += 5;
+                        if(numero[j] == '6')
+                            led += 6;
+                        if(numero[j] == '7')
+                            led += 3;
+                        if(numero[j] == '8')
+                            led += 7;
+                        if(numero[j] == '9') 
+                            led += 6;
+                    
+                        j++;
+                    }
+                    else{
+                        printf("Numero invalido\n"); 
+                        led = 0;
+                        break;
+                    }
+                }
+                printf("%d leds\n", led); 
+                j = 0; //zerando os valores para o próximo número que vai ser digitado
+                led = 0;
+            }
+        }
+
+                    
+        return 0;
+    }

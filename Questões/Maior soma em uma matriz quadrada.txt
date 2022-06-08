@@ -1,0 +1,27 @@
+Escreva um programa que leia de um arquivo texto uma matriz quadrada de números reais. O tamanho máximo da matriz é 1000. O nome do arquivo será fornecido pelo usuário. O seu programa deve calcular a soma de todos os elementos de cada linha. Em seguida o seu programa deve descobrir qual é a maior soma e que linha tem soma igual a maior soma. O programa deve imprimir a maior soma e o(s) número(s) da(s) linha(s) com soma igual a maior.
+
+Entrada
+Será fornecedido o nome do arquivo pelo usuário. Esse nome não deverá possuir mais do que 15 caracteres e não possuirá espaço. No caso dos dados do arquivo de entrada, a primeira linha contém o tamanho da matriz 1 <= N <=1000. Em seguida o arquivo contém N * N números reais em um formato livre, ou seja quantidade de números por linha do arquivo é variável.
+
+Saída
+A saída tem o seguinte formato: primeiro o valor da maior soma das linhas e em seguida as linhas com soma igual a maior soma. Considere que a linha começa com o número 0.
+
+Exemplo de Entrada
+
+exemplo.txt
+
+Exemplo do Arquivo de Entrada
+
+5
+1.0  2.0  3.0  4.0  2.0
+2.0  1.0  2.0  1.0  8.0
+3.0  0.0  0.0  0.0 11.0
+5.0  1.0  0.0  2.0  6.0
+1.0  1.0  1.0  1.0  1.0
+
+Exemplo de Saída
+
+14.000000
+1
+2
+3

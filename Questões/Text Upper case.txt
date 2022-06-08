@@ -1,0 +1,18 @@
+Dado um texto (com espaços), coloque-o em upper case (primeira letra de cada palavra em caixa alta, as demais em caixa baixa).
+
+Entrada
+
+A primeira linha de entrada contém o texto a ser lido.
+
+Saída
+A primeira linha apresenta o texto lido em upper case.
+
+Exemplo
+
+Entrada
+
+ciencia da computacao
+
+Saida
+
+Ciencia Da Computacao

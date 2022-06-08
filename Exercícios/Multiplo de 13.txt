@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int x, y, temp, i, somador = 0;
+        
+        scanf("%d %d", &x, &y);
+        
+        if(y > x){    // colocar em ordem crescente e ir do y até o x
+            temp = x;
+            x = y;
+            y = temp;
+        }
+        
+        for(i = y; i <= x; i++){ //mesma lógica da soma de ímpares consecutivos
+            
+            if(i%13 != 0){
+                somador += i;
+            }
+        }
+        
+        printf("%d\n", somador);
+        
+        
+        
+        
+        return 0;
+    }

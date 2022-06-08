@@ -1,0 +1,11 @@
+Escreva um programa em C que verifique se um número é primo. O algoritmo deve ter como entrada um número N > 0 qualquer. A saída deve indicar se o número é primo ou não.
+
+Casos de Testes:
+2
+primo
+
+3
+primo
+
+4
+nao

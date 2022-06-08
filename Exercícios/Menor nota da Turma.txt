@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int n, i, nota, menor = 11;
+        
+        scanf("%d", &n);
+        
+        for(i = 0; i < n; i++){
+            
+            scanf("%d", &nota);
+            
+            if(nota >= 0 && nota <= 10){
+                if(nota < menor){
+                    menor = nota;
+                }
+            }
+        }
+        
+        printf("%d\n", menor);
+        
+        return 0;
+    }

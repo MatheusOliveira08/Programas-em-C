@@ -1,0 +1,19 @@
+Dado uma palavra (string), coloque ela em upper case (primeira letra em caixa alta, as demais em caixa baixa).
+
+Entrada
+
+A primeira linha de entrada contém a palavra a ser lida.
+
+Saída
+A primeira linha apresenta a palavra lida em upper case.
+
+Exemplo
+
+Entrada
+
+computacao
+
+Saida
+
+Computacao
+

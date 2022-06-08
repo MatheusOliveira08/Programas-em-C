@@ -1,0 +1,40 @@
+#include <stdio.h>
+ 
+int main() {
+    
+    int n, i, j = 1, k = 2, cont; 
+    float pi, guardar = 1;
+
+    scanf("%d", &n);
+
+    if(n > 0 && n <= 10000){
+
+        float conta[n];
+    
+        for(i = 0, cont = 1; i < n; i++,cont++){ 
+            
+            if(i%2 == 0){
+                conta[i] = (float)k/j;
+            }
+
+            else{
+                j += 2;
+                conta[i] = (float)k/j;
+            }
+
+            if(cont == 2){
+                cont = 0;
+                k += 2;
+            }
+        }
+
+        for(i = 0; i < n; i++)
+            guardar = guardar * conta[i];
+
+        guardar *= 2;
+
+        printf("%.6f\n", guardar);
+    }
+
+    return 0;
+}

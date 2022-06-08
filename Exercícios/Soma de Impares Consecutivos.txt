@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int x, y, delta, maior, temp = 0, somador = 0, i;
+        
+        scanf("%d %d", &x, &y);
+        
+        maior = x;
+        
+        if(y > x){   // colocar em ordem crescente e ir do y até o x
+            temp = x;
+            x = y;
+            y = temp;
+        }
+        
+        y = y + 1; // somar 1 com o y, pois não pode contar a partir dele(questão que especificou)
+        
+        for(i = y; i < x; i++){
+            
+            
+            if(i%2 != 0){
+                
+                somador += i;
+            }
+        }
+        
+        printf("%d\n", somador);
+        
+        return 0;
+    }

@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+void sequencia();
+
+int main(void){
+	
+	int n, i;
+	
+	scanf("%d", &n); //pegando quantas vezes vai fazer a sequencia de sequencia
+	
+	for(i = 0; i < n; i++){
+		printf("Caso %d: ", i+1); //imprimindo antes
+		sequencia(); //chamando a função cada vez que for incrementado, assim não precisar usar vetor
+	}
+
+    return 0;
+}
+
+void sequencia(){ 
+	int numero, i, j, cont = 0;
+	
+	scanf("%d", &numero); //pegando o numero
+	
+	for(i = 1; i <= numero; i++){ 
+		for(j = 1; j <= i; j++)
+			cont++; //pegando a quantidade de numeros do numero que foi digitado
+	}
+	
+	if(numero == 0) //se o numero digitado for 0, então ja imprime 1
+		printf("1 numero\n");
+	else
+		printf("%d numeros\n", cont+1); //senão, vai somar 1 ao cont pra dar o valor certo do numero digitado
+	
+	cont = 0; //zera pra proxima vez que for chamado
+	
+	if(numero == 0) //se o numero foi zero, imprime 0 e acabou
+		printf("%d\n", 0);
+	
+	else{
+		printf("%d ", 0); //senão, imprime 0 de qualquer forma e depois vai imprimindo o numero i j vezes
+		for(i = 1; i <= numero; i++){
+			for(j = 1; j <= i; j++)
+				printf("%d ", i);
+		}
+		printf("\n");
+	}
+	
+}

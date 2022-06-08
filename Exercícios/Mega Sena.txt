@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int fat(int);
+
+float comb(int n, int p);
+
+int main(void){
+	int a,b;
+	float n;
+	
+	scanf("%d %d", &a, &b);
+	
+	n = comb(a,b);
+	
+	printf("Comb de %d!/%d!*(%d!) eh: %f\n", a, b, a-b, n);
+	
+	
+	
+}
+
+int fat(int n){
+    if(n == 0)
+        return 1;
+
+    return n * fat(n-1);
+}
+
+float comb(int n, int p){
+	float conta;
+	
+	conta = (float)fat(n)/(fat(p)* fat(n-p));	
+	
+	return conta;
+	
+}
+	
+	
+	

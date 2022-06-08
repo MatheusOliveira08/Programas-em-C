@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int i;
+        char nome[200];
+        
+        scanf("%s", nome); //pegando o nome
+        
+        for(i = 0; nome[i] != '\0'; i++){ //o i vai da posição 0 até o enter/espaço
+            if(nome[i] >= 'A' && nome[i] <= 'Z') //verificando se tem alguma letra entre as maiúsculas
+                nome[i] = nome[i] - 'A' + 'a'; //se tiver, eu diminui a letra naquela posição com a primeira letra maiúscula, que é o 'A', e somo com o 'a', que vai dar exatamente a distância da letra só quem em minúsculo
+              
+        }
+
+        printf("%s\n", nome);
+              
+        return 0;
+    }

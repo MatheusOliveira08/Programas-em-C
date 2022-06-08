@@ -1,0 +1,16 @@
+#include <stdio.h>
+ 
+int main() {
+ 
+   int hora, Vm, Distancia;
+   double L;
+   
+   scanf("%d %d", &hora, &Vm);
+   
+   Distancia = hora*Vm;
+   L = Distancia/12.0;
+   
+   printf("%.3lf\n", L);
+   
+    return 0;
+}

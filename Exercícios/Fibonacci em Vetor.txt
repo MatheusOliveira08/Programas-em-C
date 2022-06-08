@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int i,j = 2, t, numero;
+        
+        scanf("%d", &t);
+        
+        long int fib[61]; //vetor com o tamanho máximo de chamadas
+
+        fib[0] = 0; //inicializando fib de 0 e 1
+        fib[1] = 1;
+
+        for(i = 0; i < t; i++){
+            
+            scanf("%d", &numero);
+
+            if(numero >= 0 && numero <= 60){ //verificando se o número está entre 0 e 60
+                if(numero >= 2){ //se for menor que 2 ja mostra direto, senão, vai entrar no loop e calcular
+
+                    while(j <= numero){ 
+
+                        fib[j] = fib[j-1] + fib[j-2];
+                        j++;  
+                    }                 
+
+                    j = 2;//j precisa ser 2 para não bugar no j-1 e j-2
+                }
+
+                printf("Fib(%d) = %ld\n", numero, fib[numero]);
+            }
+            else
+                printf("Numero Invalido\n"); 
+        }
+                                              
+        return 0;
+    }

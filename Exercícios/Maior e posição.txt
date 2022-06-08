@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int n, i, maior, posicao;
+        
+        scanf("%d", &n);
+        
+        maior = n;
+        
+        posicao = 1;
+        
+        for(i = 2; i <= 5; i++){
+            
+            scanf("%d", &n);
+            
+            if(n > maior){
+                maior = n;
+                posicao = i;
+            }
+        }
+        
+        printf("%d\n %d\n", maior, posicao);
+        
+        
+        return 0;
+    }

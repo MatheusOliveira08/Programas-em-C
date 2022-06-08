@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int main(void) {
+
+	int n, i, menor = 11, segunda_menor = 11, nota, temp;
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+
+        scanf("%d", &nota);
+
+        if(nota >= 0 && nota <= 10){
+            if(nota < menor){ //verificando se a nota que eu acabei de pegar é menor que a menor
+                temp = menor; //guardando o valor da antiga menor
+                menor = nota; //atualizando o valor da menor
+                segunda_menor = temp; //pegando o antigo valor da antiga menor e colocando na segunda menor
+            }
+            else if(nota < segunda_menor && nota > menor){ //só vai acontecer quando a nota não for menor que a menor, mas for menor que a segunda
+				segunda_menor = nota;
+			}
+        }
+    }
+
+    printf("%d\n", segunda_menor);
+   
+    return 0;
+}

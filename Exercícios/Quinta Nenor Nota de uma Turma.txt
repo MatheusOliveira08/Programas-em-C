@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+    int main(void){
+
+        int i, j = 1, n, temp[5] = {0}, menor[5] = {11,11,11,11,11}; //inicializando com 11 pq não está entre 0 e 10
+
+        scanf("%d", &n);
+
+        int nota[n];
+
+        for(i = 0; i < n; i++){
+            scanf("%d", &nota[i]);
+
+            if(nota[i] < 0 && nota[i] > 10){ 
+                i--;
+            }
+        }
+
+        for(i = 0; i < n; i++){ //mesma lógica da segunda menor nota, só que aqui eu cololquei um while para cobrir os outros 4 casos
+ 
+            if(nota[i] < menor[0]){ //se a nota for menor que menor[0] vai entrar no caso
+                temp[0] = menor[0]; 
+                menor[0] = nota[i]; //no caso do menor[0] ele fica fora do while, pq ele não recebe o menor anterior e sim a nota diretamente
+                while(j < 5){ //fiz um while de j = 1 até 4
+                    temp[j] = menor[j]; //criei um outro vetor temp que guarda o valor das notas, dessa forma quando elas receberem o "novo menor" o valor antigo delas vai ficar salvo para as próximas menores
+                    menor[j] = temp[j-1]; //agora cada nota vai ser atualizada recebendo a menor anterior  
+                    j++;  
+                }
+                j = 1; //tem que volta o j para o valor inicial
+            }
+            else if(nota[i] > menor[0] && nota[i] < menor [1]) //da pra fazer um for aqui para não ficar esse monte de else if
+				menor[1] = nota[i];
+            else if(nota[i] > menor[1] && nota[i] < menor[2])
+                menor[2] = nota[i];
+            else if(nota[i] > menor[2] && nota[i] < menor[3])
+                menor[3] = nota[i];
+            else if(nota[i] > menor[3] && nota[i] < menor[4])
+                menor[4] = nota[i];
+			
+        }
+
+        printf("%d\n", menor[4]);
+        
+        return 0;
+    }

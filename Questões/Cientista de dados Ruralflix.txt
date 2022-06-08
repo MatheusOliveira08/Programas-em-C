@@ -1,0 +1,37 @@
+Você é responsável na análise do dados do sistema de recomendação de vídeos acadêmicos chamado RuralFlix. Os usuários podem dar uma nota para os vídeos acadêmicos, ou seja, ele irá associar um valor inteiro entre 1 até 5. Desta forma, esse valor significará o quanto ele gostou daquele vídeo. A empresa forneceu uma parte dos dados para você analisar e eles estarão em um arquivo que será fornecido pelo usuário. Na primeira linha deste arquivo fornecerá a quantidade de usuários, na segunda linha será a quantidade de vídeos e na terceira a quantidade de avaliações contidas no arquivo. Após, cada avaliação estará em seguida em cada linha do arquivo os identificadores do usuário, do vídeo e a respectiva nota, no seguinte formato: id_usuário id_video nota.
+
+Um vídeo é considerado popular quando muitas pessoas já o assistiram, independentemente das avaliações recebidas.
+
+Escreva um programa que leia um arquivo e descubra o vídeo com a maior popularidade. O nome do arquivo será fornecido pelo usuário.
+
+Entrada
+
+O nome do arquivo possuirá no máximo 15 caracteres e será um nome contínuo, ou seja, não possuirá espaços.
+
+Os dados no arquivo de entrada tem o seguinte formato: a primeira linha contendo o número de usuários (U≤1000), na segunda linha contendo o número de vídeos (V≤1000) e na terceira linha contendo o número máximo de avaliações (a≤U∗V ). Em seguida terá as avaliações em cada linha no seguinte formato: u v r, sendo que 0<u≤U,  0<v≤V,  1≤r≤5 e r∈N.
+
+Sendo que um usuário não pode avaliar o mesmo video duas ou mais vezes.
+
+Saída
+
+Será informado na saída padrão o identificador do vídeo que tenha a maior popularidade. Caso existam mais de um vídeo com a maior popularidade, informe o vídeo com menor id.
+
+Exemplo de Entrada
+
+ruralflix.txt
+
+Exemplo de Entrada do Arquivo
+4
+10
+8
+1 1 3
+1 2 4
+1 3 5
+2 1 2
+3 1 4
+3 2 4
+4 1 3
+4 3 4 
+
+Exemplo de Saída
+1

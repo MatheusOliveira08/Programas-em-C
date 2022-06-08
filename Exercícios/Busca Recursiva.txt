@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+void pegar_valores(int [], int);
+
+int busca_recursiva(int [], int, int);
+
+
+int main(void){
+    
+    int x, n, aux;
+
+    scanf("%d", &x);
+    scanf("%d", &n);
+
+    int v[n];
+    
+    pegar_valores(v, n);
+
+    aux = busca_recursiva(v, x, n);
+
+    printf("%d\n", aux);     
+
+    return 0;
+}
+
+void pegar_valores(int v[], int n){
+    int i;
+      
+    for(i = 0; i < n; i++)
+        scanf("%d", &v[i]);
+}
+
+int busca_recursiva(int v[], int x, int n){
+    int i;
+
+    for(i = 0; i < n; i++){
+        if(v[i] == x)
+        return i;
+    }
+
+    return -1;
+}
+    

@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main (void){
+
+  int n;
+
+  printf("Entre com a dimensão da matriz\n");
+  scanf("%d",&n);
+  int mat[n][n];
+
+  // leitura de dados da matriz
+  for (int i=0; i<n; i++)
+    for (int j=0;j<n;j++)
+        scanf("%d",&mat[i][j]);
+
+  // veriicando dados
+  for (int i=0; i<n; i++)
+    for (int j=0;j<n;j++)
+        printf("%d ",mat[i][j]);
+
+    printf("\n");
+
+  int perm = 1;
+  // verificação
+  for (int i=0; i<n && perm; i++){
+    int soma_linha = 0, soma_coluna = 0;
+    for (int j=0;j<n;j++){
+
+       int val = mat[i][j];
+
+       if (val<0 || val>1) { perm=0; break;} // abortar
+
+       soma_linha  += val;
+       soma_coluna += mat[j][i];
+    }
+    if (soma_linha != 1  || soma_coluna != 1)
+       perm=0;
+  }
+
+  // saída
+  if (perm)
+     printf("\nÉ permutação\n");
+  else
+     printf("\nNão é permutação\n");
+
+  return 0;
+}

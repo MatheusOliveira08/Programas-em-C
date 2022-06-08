@@ -1,0 +1,46 @@
+#include <stdio.h>
+#define MAX 1000
+
+typedef struct{
+    char nome[MAX];
+    float tempo;
+}TCompetidor;
+
+int main(void){
+    
+    FILE* arquivo;
+
+    arquivo = fopen ("maratona.txt", "r");
+
+    if (arquivo == NULL) {
+        perror("Error, impossível abrir arquivo\n");
+        return 1;
+    }
+
+    int ncompetidor, distancia, i;
+
+    fscanf(arquivo, "%d" "%d", &ncompetidor, &distancia);
+
+    TCompetidor competidor[ncompetidor];
+
+    for(i = 0; i < ncompetidor; i++){
+        fscanf(arquivo, "%f", &competidor[i].tempo);
+        fgets(competidor[i].nome, MAX, arquivo);
+        printf("Competidor %d -> Tempo = %f, Nome = %s", i+1, competidor[i].tempo,competidor[i].nome);
+    }
+
+    float velocidade_media, maior = -1;
+    int aux;
+
+    for(i = 0; i < ncompetidor; i++){
+        velocidade_media = distancia/competidor[i].tempo;
+        if(velocidade_media > maior){
+            maior = velocidade_media;
+            aux = i;
+        }
+    }
+
+    printf("%.2f %.2f\n", competidor[aux].tempo, maior);
+
+    return 0;
+}

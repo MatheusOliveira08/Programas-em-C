@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int n, i, menor = 2147483647, posicao; //coloquei menor com o maior inteiro possível
+        
+        scanf("%d", &n);
+
+        if(n > 1 && n < 1000){ //verificando o valor de n
+
+            int x[n]; //recebendo n como tamanho do vetor
+            
+            for(i = 0; i < n; i++){
+
+                scanf("%d", &x[i]); //pegando os numeros do vator
+                if(x[i] < menor){ //já fazendo as vericações 
+                    menor = x[i]; //menor recebe x[i], se x[i] for maior 
+                    posicao = i;  //variável para guardar a posição
+                }
+                
+            }
+        }
+
+        printf("Menor valor: %d\nPosicao: %d\n", menor, posicao);
+           
+        return 0;
+    }

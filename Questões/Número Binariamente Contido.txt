@@ -1,0 +1,28 @@
+Faça um programa que receba um número N binário de até 32 bits, um número M binário de até 32 bits e um número inteiro K. A saída deverá ser 1 caso os K últimos bits de M se encontram em algum local da sequência de bits de N. Deve-se mostrar zero caso contrário.
+
+Restrições:
+Tamanho de N será 32 bits
+Tamanho de M será 32 bits
+0≤K≤32
+Não poderá usar nenhum biblioteca que não seja o stdio.h
+
+Exemplo 1
+Entrada
+11011
+1011
+2
+Sendo N=11011, M=1011, K=2
+
+Saída
+1
+
+
+Exemplo 2
+Entrada
+1100111001
+10101101
+4
+Sendo N=1100111001, M=10101101, K=4.
+
+Saída
+0

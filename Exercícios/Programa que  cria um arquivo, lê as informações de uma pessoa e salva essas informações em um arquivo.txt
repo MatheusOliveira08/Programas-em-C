@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_NOME 200
+#define MAX_FRASE 1000
+#define NOME_PESSOA 500
+
+typedef struct { //criando uma estrutura tipo arquivo, que contem um ponteiro de arquivo, um char para pegar o nome e o número de pessoas 
+    FILE* arquivo;
+    char  nome[MAX_NOME];
+    int   npessoas;
+} TArquivo;
+
+typedef struct { //estrutura com os dados de uma pessoa
+    char nome_pessoa[NOME_PESSOA];
+    int idade;
+    char genero;
+} TPessoa;
+
+void abrir_arquivo(TArquivo *); //função que cria um arquivo para escrita e pega o número de pessoas
+
+void escrever_informacoes(TArquivo *arq, TPessoa pessoas[]); //função que pega as informações das pessoas e salva em um vetor de pessoas, na qual cada posição do vetor possui as 3 "variáveis" quem criamos no tipo TPessoa
+
+void armazena_pessoas(TPessoa pessoas[], int n); //printando cada vetor no arquivo
+
+int main(void){
+
+    TArquivo arq; //criando uma variável tipo arquivo
+    
+    abrir_arquivo(&arq); // abre o arquivo e pega as informações o número de pesssoas
+    
+    TPessoa  pessoas[arq.npessoas]; //cria um vetor do tipo TPessoa
+    
+    armazena_pessoas(pessoas, arq.npessoas); //chamando a função para pegar as informções de cada pessoa(precisa do vetor pessoas e no número de pessoas)
+
+    escrever_informacoes(&arq, pessoas); //escrevendo no arquivo cada vetor(precisa de um ponteiro do arq e do vetor pessoas)
+
+    fclose(arq.arquivo); //fechando o arquivo
+
+    return 0;
+}
+
+void abrir_arquivo(TArquivo *arq){
+
+    printf("Entre com o nome do arquivo: \n");
+    scanf("%s", arq->nome);
+
+    printf("Digite o numero de pessoas: \n");
+    scanf("%d", &(arq->npessoas));
+
+    arq->arquivo = fopen(arq->nome, "w");
+    if (arq->arquivo == NULL) { //verificando se abre normal, se der algum problema ele sai do programa
+        perror("Error, impossível abrir arquivo\n");
+        exit(1);
+    }
+    
+}
+
+void armazena_pessoas(TPessoa pessoas[], int n){
+
+    for(int i = 0; i < n; i++){
+        
+        printf("Digite o nome do usuario: \n"); //como nós criamos um vetor do tipo TPessoa, cada posição do vetor possui nome, idade e genero, por isso vc precisa pegar cada uma dessas informações pra só uma posição do vetor no mesmo i
+        scanf(" %499[^\n]", pessoas[i].nome_pessoa);
+        
+        printf("Digite a idade do usuario: \n");
+        scanf("%d", &pessoas[i].idade);
+                
+        printf("Digite o genero do usuario: \n");
+        scanf(" %c",&pessoas[i].genero);
+    }
+    
+}
+
+void escrever_informacoes(TArquivo *arq, TPessoa pessoas[]){
+
+    int i;
+    
+    for(i = 0; i < arq->npessoas; i++){ //printando cada vetor que pegamos na função armazena_pessoas no arquivo que nós criamos
+                
+        fprintf(arq->arquivo, "%s;%d;%c\n", pessoas[i].nome_pessoa,pessoas[i].idade,pessoas[i].genero);
+                
+    }
+
+}

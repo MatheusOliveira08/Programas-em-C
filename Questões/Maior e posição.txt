@@ -1,0 +1,22 @@
+Leia 5 valores inteiros. Apresente então o maior valor lido e a posição dentre os 5 valores lidos.
+
+Entrada
+O arquivo de entrada contém 5 números inteiros, positivos e distintos.
+
+Saída
+Apresente o maior valor lido e a posição de entrada, conforme exemplo abaixo
+
+Exemplo
+
+Entrada
+
+2
+113
+45
+34565
+6
+
+Saida
+
+34565
+4

@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+    int main(void){
+
+        int i, j = 1, k = 0, x, n; 
+
+        scanf("%d %d", &n, &x); //pegando a quantidade de notas e a posição da menor nota, respectivamente
+        
+        if(n > 5 && x < n){
+
+            int nota[n];
+            int temp[x]; 
+            int menor[x];
+    
+            for(i = 0; i < x; i++){ //colocando todas as menores notas com o valor 11 e zerando todas as temp
+                menor[i] = 11;
+                temp[i] = 0;
+            }
+    
+            for(i = 0; i < n; i++){ 
+                scanf("%d", &nota[i]);
+    
+                if(nota[i] < 0 && nota[i] > 10){ 
+                    i--;
+                }
+            }
+    
+            for(i = 0; i < n; i++){ //mesma lógica da quinta menor nota
+     
+                if(nota[i] < menor[0]){ 
+                    temp[0] = menor[0]; 
+                    menor[0] = nota[i]; 
+                    while(j < x){ 
+                        temp[j] = menor[j]; 
+                        menor[j] = temp[j-1];  
+                        j++;  
+                    }
+                    
+                    j = 1; 
+                }
+                else{ //só que aqui eu transformei os casos em que a nota digitada é maior que a menor, mas menor que as demais, em uma forma genérica
+                    while(k < x){
+                        if(nota[i] > menor[k] && nota[i] < menor [k+1]) 
+                        menor[k+1] = nota[i];    
+                        k++;
+                    }
+                    k = 0;
+                }
+    			
+            }
+    
+            printf("%d\n", menor[x-1]);
+        }
+        
+        return 0;
+    }

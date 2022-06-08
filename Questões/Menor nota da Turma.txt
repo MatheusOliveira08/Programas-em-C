@@ -1,0 +1,26 @@
+Faça um programa para encontrar a menor nota de uma turma com N alunos. As notas são números inteiros de 0 a 10, caso diferente ignore.
+
+Entrada
+
+Primeira linha informa a quantidade de aluno, N.
+
+A segunda linha, contém as notas dos alunos da turma, separadas por um espaço.
+
+Saída
+
+A primeira linha contém a menor nota da turma.
+
+Exemplo:
+
+Entrada
+
+10
+
+10 8 7 4 9 5 3 2 9 8
+
+Saída
+
+2
+
+
+

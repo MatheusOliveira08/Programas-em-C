@@ -1,0 +1,26 @@
+O analisador léxico, ou scanner como também é chamado, faz a varredura do programa fonte caractere por caractere e, traduz em uma sequência de símbolos léxicos ou tokens. É nessa fase que são reconhecidas as palavras reservadas, constantes, identificadores e outras palavras que pertencem a linguagem de programação. Desta forma, uma das tarefas do analisador léxico é verificar se um identificador é válido naquela linguagem de programação.
+
+Na linguagem de programação C, um identificador pode começar com uma letra maiúscula, minúscula e underline, em seguida pode possuir uma sequência de letras, números e underline. 
+
+Escreva um programa em C que irá verificar se uma palavra submitida pelo usuário é um identificador válido ou não. O seu programa deverá começar recebendo o número de palavras que serão analisados pelo analisador léxico e em seguindas as palavras à serem validadas.
+
+Restrições:
+Sabe-se que a palavra para ser verificada possuirá no máximo 50 caracteres.
+Não pode usar a biblioteca string.h.
+
+Exemplo de entrada e saída:
+
+Entrada:
+5
+_somatorio
+1variavel
+a_b_c_1
+abc
+for
+
+Saída:
+VALIDO
+NAO VALIDO
+VALIDO
+VALIDO
+VALIDO

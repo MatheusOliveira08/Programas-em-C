@@ -1,0 +1,18 @@
+#include <stdio.h>
+ 
+int main() {
+ 
+    int n, hora, min, seg;
+    
+    scanf("%d", &n);
+    
+    hora = n / 3600;
+    n = n % 3600;
+    min = n/60;
+    n = n % 60;
+    seg = n / 1;
+    
+    printf("%d:%d:%d\n", hora, min, seg);
+    
+    return 0;
+}

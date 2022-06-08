@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int n, nota, i, soma = 0, cont = 0;
+        
+        scanf("%d", &n);
+        
+        for(i = 0; i < n; i++){
+            
+            scanf("%d", &nota); //pegando as notas
+            
+            if(nota >= 0 && nota <= 10){ //se estiver entre 0 e 10 entra, incluindo ambos, na condição
+                
+                soma += nota; //ai soma os valores 
+            }
+            else
+                cont++; //se a nota não estiver entre os valores, guarda em cont
+        }
+        
+        printf("%.1f\n", (float)soma/(n-cont)); //agora diminui de n(número de alunos) as notas que estão fora do intervalo e faz a divisão
+        
+        return 0;
+    }

@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int x, i, f1 = 1, f2 = 0, f3 = 0, soma = 0; //iniciando f1 = 1 e f2 = 0, pois são os valores iniciais e fibonacci
+        
+        scanf("%d", &x);
+        
+        while(f3 < x){ //tem que colocar enquanto f3 < x, pq senão o número cresce muito
+            
+            f3 = f1 + f2; //f3 recebe a soma dos dois anteriores
+            f2 = f1; //f2 recebe f1
+            f1 = f3; //f1 recebe f3
+           
+            if(f3%2 == 0 && f3 < x){ //se for par, entra na soma
+                soma += f3;
+            }
+        }
+        
+        printf("%d\n", soma);
+        
+        return 0;
+    }

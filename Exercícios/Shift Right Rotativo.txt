@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+    int main(void){
+
+        int i,j, n; 
+
+        scanf("%d", &n); 
+        
+        if(n > 5){
+
+            int numero[n];
+            int temp[n-1]; //vetor que vai guardar todas as notas, menos a última
+        
+            for(i = 0; i < n; i++){ 
+                scanf("%d", &numero[i]);
+    
+                if(numero[i] < 0 && numero[i] > 10){ 
+                    i--;
+                }
+            
+            }
+    
+            for(i = 0; i < n-1; i++) //pegando todas a notas, menos a última
+                temp[i] = numero[i];
+    
+            numero[0] = numero[n-1]; //fazendo manualmente a troca da primeira com a última
+    
+            for(i = 1, j = 0; i < n, j < n-1; i++,j++) //agora que a primeira já tem a última, só substituir no vetor numero da segunda até a última os valores salvos em temp
+                numero[i] = temp[j];
+    
+            for(i = 0; i < n; i++)
+                printf("%d\n", numero[i]);
+        }
+          
+        return 0;
+    }

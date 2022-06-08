@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define MAX 1000
+
+typedef struct{
+    char frase[MAX];
+    int abre_parenteses;
+    int fecha_parenteses;
+} TParentese;
+
+int main(void){
+    TParentese p;
+    int n, i;
+
+    p.abre_parenteses = 0;
+    p.fecha_parenteses = 0;
+
+    scanf("%s", p.frase);
+
+    for(i = 0; p.frase[i] != '\0'; i++){
+
+        if(p.frase[i] == '(')
+            p.abre_parenteses++;
+
+        else if(p.frase[i] == ')')
+            p.fecha_parenteses++;
+    }
+
+    if(p.frase[0] == ')')
+        printf("incorrect\n");
+
+    else if(p.abre_parenteses == p.fecha_parenteses)
+        printf("correct\n");
+
+    else
+        printf("incorrect\n");
+    
+    return 0;
+}
+	
+	

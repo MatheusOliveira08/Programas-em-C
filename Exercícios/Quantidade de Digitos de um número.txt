@@ -1,0 +1,19 @@
+#include <stdio.h>
+    
+    int main(void)
+    {
+        int tamanho = 0, valor;
+        scanf("%d", &valor);
+
+        if (valor == 0) 
+            tamanho = 1;
+        else
+            while (valor > 0){
+           
+               tamanho = tamanho + 1;
+               valor = valor / 10;
+            }
+           
+       printf("%d\n", tamanho);
+       return 0;
+   }

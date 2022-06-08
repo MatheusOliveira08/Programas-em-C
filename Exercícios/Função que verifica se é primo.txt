@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+  int primo(int);
+
+  int main(void){
+        
+    int p, x;
+
+    scanf("%d", &p);
+
+    x = primo(p);
+
+    if(x == 1){
+      printf("%d eh primo\n", p);
+    }
+    else
+      printf("%d nao eh primo\n", p);
+        
+  return 0;
+}
+
+  int primo(int p){
+
+    int i, cont;
+
+    for(i = 1; i <= p; i++){
+
+      if(p%i == 0)
+        cont++;      
+    }
+
+    if(cont == 2)
+      return 1;
+    else  
+      return 0; 
+      
+  }

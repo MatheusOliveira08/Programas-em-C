@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+    int main(void){
+        
+        int n, i, nota, cont = 0;
+        
+        scanf("%d", &n);
+        
+        for(i = 0; i < n; i++){
+            
+            scanf("%d", &nota);
+            
+            if(nota >= 0 && nota <= 10){
+                if(nota >= 5){
+                    cont++;
+                }
+            }
+        }
+        
+        printf("%d\n", cont);
+        
+        
+        
+        
+        return 0;
+    }

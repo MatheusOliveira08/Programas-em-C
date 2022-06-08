@@ -1,0 +1,23 @@
+O sistema binário ou de base 2 é um sistema de numeração posicional em que todas as quantidades se representam com base em dois números, ou seja, zero e um (0 e 1). Para converter um número decimal para binário, basta realizar divisões sucessivas do número decimal por 2 (base do sistema binário), caso o resultado seja exato, a divisão terá o resto zero, caso contrário terá o resto 1. O resultado é obtido, juntando o resultado da última para a primeira divisão realizada. Por exemplo:
+
+
+
+bin
+
+Faça um programa que converta um número X em formato decimal para binário.
+
+Restrições:
+
+Considere que o número decimal informado será: inteiro, positivo e menor que 256
+Não pode usar o scanf para a conversão do número e não pode usar alguma biblioteca que não seja o stdio.h.
+Entrada:
+
+Número inteiro X
+
+Saída:
+
+Representação binária de X
+
+Exemplo de Entrada e Saída:
+29
+11101

@@ -1,0 +1,32 @@
+Você foi contrato para participar de um projeto para desenvolvimento de uma biblioteca para computação científica. Como tarefa da sua primeira semana, você deverá desenvolver uma função. Nesta biblioteca existe o tipo VETOR que representa um conjunto de elementos inteiros. Sendo que a variável lista desta estrutura representa um ponteiro para uma lista de inteiros e a variável size é a quantidade de elementos desta lista.
+
+A função que você deverá desenvolver será chamada intercala terá como entrada dois ponteiros para o tipo VETOR e o objetivo será retornar um ponteiro para um novo VETOR com a intercalação dos elementos dos dois conjuntos de entrada. Ou seja, o primeiro elemento do vetor 1, seguido do primeiro elemento do vetor 2, seguido do segundo elemento do vetor 1, e assim por diante. Os conjuntos fornecidos na entrada podem ter tamanhos diferentes. Caso aconteça, deverá só ser concatenado os n primeiros elementos, sendo que n é o tamanho do menor vetor. Exemplo:
+
+[1, 1, 1, 1] e [2, 2] -> [1, 2, 1, 2]
+
+Segue o protótipo abaixo.
+
+typedef struct
+{
+    int *lista;
+    int size;
+} VETOR;
+
+VETOR * intercala(VETOR *, VETOR *);
+
+Quando iniciar a submissão do arquivo, o sistema automaticamente criará o arquivo string.c contendo a definição da estrutura e o método que será implementado, ou seja, ficará dessa forma:
+
+#include<stdlib.h>
+
+typedef struct
+{
+    int *lista;
+    int size;
+} VETOR;
+
+VETOR * intercala(VETOR *a, VETOR *b) {
+    
+    return NULL;
+}
+
+OBS: Deverá somente preencher a função intercala.

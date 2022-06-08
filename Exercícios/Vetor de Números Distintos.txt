@@ -1,0 +1,35 @@
+//obs: tira os printf no meio do código e deixa só o último, pq eu fiz sem ser pro moddle
+#include <stdio.h>
+
+    int main(void){
+
+        int i, j, n, cont;
+
+        scanf("%d", &n);
+
+        int v[n], v2[n];
+
+        for(i = 0; i < n; i++){
+            scanf("%d", &v2[i]); //vetor temporário pra guardar os valores 
+            for(j = 0; j <= i; j++){ // fazendo um outro for pra verificar se o número digitado em v2 foi repitido
+                if(v2[i] == v2[j]) //nesse caso ele só pode ser igual uma vez, que é quando j == i
+                    cont++; 
+            }
+
+            if(cont < 2){ //se cont for menor que 2, significa que ele digitou um número que não estava repetido, além do j == i
+                v[i] = v2[i]; //agora sim o vetor v poder receber o número de v2
+                printf("V = %d\n", v[i]);
+            }
+            else{
+                printf("Numero repetido\n"); //se for maior que um aparece a mensagem pro usuário
+                i--; // você decrementa pq essa passada não contou, pois o número foi repetido, ai quando decrementar, vai incrementar e voltar pro mesmo i que estava
+            }
+
+            cont = 0; // zerar o cont senão vai acumulando, ai da ruim
+        }
+
+        for(i = 0; i < n; i++)
+            printf("V[i] = %d\t", v[i]); // printando namoral
+      
+        return 0;
+    }
